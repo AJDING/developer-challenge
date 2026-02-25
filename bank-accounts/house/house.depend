@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1745298745 source:c:\users\alexd\onedrive\documents\github\bank-accounts\house\main.cpp
+	<iostream>
+	<cstring>
+	"house.h"
+
+1745299004 c:\users\alexd\onedrive\documents\github\bank-accounts\house\house.h
+

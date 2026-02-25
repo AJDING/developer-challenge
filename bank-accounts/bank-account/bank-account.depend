@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1745251983 source:c:\users\alexd\onedrive\documents\github\bank-accounts\bank-account\main.cpp
+	<iostream>
+	<cstring>
+
