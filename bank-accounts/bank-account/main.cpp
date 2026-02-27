@@ -14,7 +14,7 @@ struct person
     int amount;
 };
 
-int avail[5];
+int avail[5]; // slots available for bank accounts
 
 struct person *pBankCustomer; // global variable
 // pBankCustomer pointer of struct person, representing an entity of struct person pointing being pointed to by pBankCustomer (which also represents an array that's memory allocated)
@@ -26,9 +26,9 @@ struct person *pBankCustomer; // global variable
 int customerAdd() // parenthesis only for functions
 {
     struct person *pNewPerson;
+	// pNewPerson a null pointer until assigned to an entity
     // availableIndex++;
     // = &pBankCustomer[availableIndex]; **
-    // pNewPerson a null pointer until assigned to an entity
 
     char inputString[10]; // string unlimited at 256 bytes (each character 8-bits), max can crash program in embedded systems
 
@@ -89,7 +89,7 @@ int customerRemove()
 
     for(int i = 0; i < 5; i++)
     {
-        pExistingPerson = &pBankCustomer[i]; // **
+        pExistingPerson = &pBankCustomer[i]; // ** // & // either pointer works
 
         // understand logic if statements and where to put them
         if (avail[i] == 1 && pExistingPerson->bankaccountNum == inputBankAccount) // make sure account is valid && existing account is equal to bank account entered
