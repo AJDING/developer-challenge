@@ -9,6 +9,7 @@ struct person
     // int bankaccountRoute;
     char firstName[20];
     char lastName[20];
+    char DOB[20];
     int amount;
 };
 
@@ -126,24 +127,67 @@ int deposit()
     {
         pExistingPerson = &pBankCustomer[i];
 
-        if(pBankCustomer[i])
+        if(pBankCustomer[i].bankaccountNum == inputBankAccount)
+        {
+            pBankCustomer[i].amount += depositAmount;
+            cout << "Amount: " << pBankCustomer->amount << endl;
+            break;
+        }
     }
 }
 
 int withdraw()
 {
+    char inputString[10];
+    cout << "Enter Bank Account Number: ";
+    cin >> inputString;
+    int inputBankAccount = atoi(inputString);
+    struct person *pExistingPerson;
 
+    cout << "Hello " << pExistingPerson->firstName << " " << pExistingPerson->lastName << endl;
+    cout << "Your Bank Account Number is "<< pExistingPerson->bankaccountNum;
+
+    cout << "Withdraw Amount: ";
+    cin >> inputString;
+    int withdrawAmount = atoi(inputString);
+
+    for(int i = 0; i < 5; i++)
+    {
+        pExistingPerson = &pBankCustomer[i];
+
+        if(pBankCustomer[i].bankaccountNum == inputBankAccount)
+        {
+            pBankCustomer[i].amount -= withdrawAmount;
+            cout << "Amount: " << pBankCustomer->amount << endl;
+            break;
+        }
+    }
 }
 
 int admin()
 {
+    struct person *pCustomer;
 
+    for (int c = 0; c < 5; c++)
+    {
+        if (availableIndex[c] = 1)
+        {
+            pCustomer = &pBankCustomer[c];
+            cout
+                << pCustomer->firstName << " "
+                << pCustomer->lastName << " :: "
+                << pCustomer->bankaccountNum << " :: "
+                << pCustomer->amount << endl;
+        }
+    }
 }
 
 
-int main()
+int main(int argc, char**argv)
 {
     char inputString[10]; // define initial inputString parameters
+
+    for (int i = 0; i < 5; i++) availableIndex[i] = 0;
 
     while(1)
     {
@@ -153,11 +197,13 @@ int main()
         cout << "4 - Withdraw Account" << endl;
         cout << "5 - Exit" << endl;
         cout << "6 - Administrative View" << endl;
-        cout << "1 - Input a choice: ";
+        cout << "Input a choice: ";
 
+        bool exit = false;
         cin >> inputString;
+        int input = atoi(inputString);
 
-        int input;
+        // int input;
 
         switch(input)
         {
@@ -186,6 +232,8 @@ int main()
                 admin();
                 break;
             default:
+                cout << "Invalid Selection" << endl;
+                cout << "Re-input choice: " << endl;
                 break;
         }
         if(exit == true)
