@@ -108,7 +108,26 @@ int customerRemove()
 
 int deposit()
 {
+    char inputString[10];
+    cout << "Enter Bank Account Number: ";
+    cin >> inputString;
+    int inputBankAccount = atoi(inputString);
 
+    struct person *pExistingPerson;
+
+    cout << "Hello " << pExistingPerson->firstName << " " << pExistingPerson->lastName << endl;
+    cout << "Your Bank Account Number is " << pExistingPerson->bankaccountNum;
+
+    cout << "Deposit Amount: ";
+    cin >> inputString;
+    int depositAmount = atoi(inputString);
+
+    for(int i = 0; i < 5; i++)
+    {
+        pExistingPerson = &pBankCustomer[i];
+
+        if(pBankCustomer[i])
+    }
 }
 
 int withdraw()
