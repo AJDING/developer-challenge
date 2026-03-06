@@ -95,7 +95,7 @@ int customerRemove()
         if (avail[i] == 1 && pExistingPerson->bankaccountNum == inputBankAccount) // make sure account is valid && existing account is equal to bank account entered
         {
             cout << "Hello " << pExistingPerson->firstName << " " << pExistingPerson->lastName << endl;
-            cout << "Your Bank Account Number is " << pExistingPerson->bankaccountNum;
+            cout << "Your Bank Account Number is " << pExistingPerson->bankaccountNum << endl;
             cout << "Amount: " << pExistingPerson->amount << endl;
             cout << "Are you sure you wish to remove account?" << endl;
             cout << "1 - Yes" << endl;
